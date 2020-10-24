@@ -57,17 +57,76 @@ function originP() {
             // Switch statements
             switch (answers.role) {
                 case 'Manager':
-                    managerQuery();
+                    managerP();
                     break;
                 case 'Engineer':
-                    engineerQuery();
+                    engineerP();
                     break;
                 case 'Intern':
-                    internQuery();
+                    internP();
                     break;
                 default:
                     generateHTML();
                     break;
             }
+        });
+}
+
+// Prompt questions for the Manager class
+function managerP() {
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                name: "name",
+                message: "What is your name?"
+            },
+            {
+                type: "input",
+                name: "email",
+                message: "What is your email?"
+            },
+            {
+                type: "input",
+                name: "officeNumber",
+                message: "What is your office number?"
+            }
+        ])
+        .then(answers => {
+            // Creates and pushes answers to the Manager class
+            const manager = new Manager(answers.name, id++, answers.email, answers.officeNumber);
+
+            teampg.push(manager);
+            mainQuery();
+        });
+}
+
+// Prompt questions for Engineer class
+function engineerP() {
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                name: "name",
+                message: "What is your name?"
+            },
+            {
+                type: "input",
+                name: "email",
+                message: "What is your email?"
+            },
+            {
+                type: "input",
+                name: "github",
+                message: "What is your github username?",
+            }
+        ])
+        // Creates and pushes responses to Engineer class
+        .then(answers => {
+            const engineer = new Engineer(answers.name, id++, answers.email, answers.github);
+
+            employeedb.push(engineer);
+            mainQuery();
+
         });
 }
