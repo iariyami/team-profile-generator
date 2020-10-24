@@ -10,7 +10,6 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-const teampg = []
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
@@ -33,3 +32,42 @@ const teampg = []
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+
+// Stores employee information
+const teampg = []
+
+function originP() {
+
+    // Prompt for CLI
+    inquirer
+        .prompt([
+            {
+                type: "List",
+                name: "Role",
+                message: "What is your Job Title?",
+                choices: [
+                    "Manager",
+                    "Engineer",
+                    "Intern",
+                    "Exit"
+                ],
+            }
+        ])
+        .then(answers => {
+            // Switch statements
+            switch (answers.role) {
+                case 'Manager':
+                    managerQuery();
+                    break;
+                case 'Engineer':
+                    engineerQuery();
+                    break;
+                case 'Intern':
+                    internQuery();
+                    break;
+                default:
+                    generateHTML();
+                    break;
+            }
+        });
+}
