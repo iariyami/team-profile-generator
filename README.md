@@ -22,7 +22,7 @@
 # **Links**
 * Github Overview: https://github.com/iariyami/team-profile-generator
 
-* Vide Demo:
+* Video Demo: https://drive.google.com/file/d/1T4_xOgATZoAekfAKANtTopS1FQ-_3xEe/view
 
 # **Purpose**
 * The purpose of this application was to be able to create an easy understand visual for an organization to view a team.
