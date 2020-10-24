@@ -125,7 +125,6 @@ function engineerP() {
             const engineer = new Engineer(answers.name, id++, answers.email, answers.github);
             teampg.push(engineer);
             originP();
-
         });
 }
 
@@ -154,7 +153,15 @@ function internP() {
             const intern = new Intern(answers.name, id++, answers.email, answers.school);
             teampg.push(intern);
             originP();
-
         });
 }
+
 originP();
+
+// Pushes prompt info to html page
+function generateHTML() {
+    const team = render(teampg);
+    fs.writeFile("./output/team.html", team, function (err) {
+        if (err) throw err;
+    })
+}
