@@ -20,10 +20,12 @@
 ![]
 
 # **Links**
-* Github Overview: 
+* Github Overview: https://github.com/iariyami/team-profile-generator
+
+* Vide Demo:
 
 # **Purpose**
-* 
+* The purpose of this application was to be able to create an easy understand visual for an organization to view a team.
 
 # **Contributors**
 * Ibrahim Riyami
@@ -34,10 +36,6 @@
 * iariyami@ncsu.edu
 
 # **Credits**
-* 
+* https://www.npmjs.com/package/inquirer
 
-* 
-
-* 
-
-* 
+* https://nodejs.org/api/modules.html
