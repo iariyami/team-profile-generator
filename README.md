@@ -17,7 +17,7 @@
 
 * Screenshot of Deployed Application:
 
-![]
+![](images/team-profile-generator.png)
 
 # **Links**
 * Github Overview: https://github.com/iariyami/team-profile-generator
