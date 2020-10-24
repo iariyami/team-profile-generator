@@ -92,12 +92,11 @@ function managerP() {
                 message: "What is your office number?"
             }
         ])
+        // Creates and pushes answers to the Manager class
         .then(answers => {
-            // Creates and pushes answers to the Manager class
             const manager = new Manager(answers.name, id++, answers.email, answers.officeNumber);
-
             teampg.push(manager);
-            mainQuery();
+            originP();
         });
 }
 
@@ -124,9 +123,38 @@ function engineerP() {
         // Creates and pushes responses to Engineer class
         .then(answers => {
             const engineer = new Engineer(answers.name, id++, answers.email, answers.github);
-
-            employeedb.push(engineer);
-            mainQuery();
+            teampg.push(engineer);
+            originP();
 
         });
 }
+
+// Prompt questions for Intern class
+function internP() {
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                name: "name",
+                message: "Please enter your name:"
+            },
+            {
+                type: "input",
+                name: "email",
+                message: "Please enter your email:"
+            },
+            {
+                type: "input",
+                name: "school",
+                message: "Please enter your current school:",
+            }
+        ])
+        .then(answers => {
+            // Creates and pushes responses to Intern class
+            const intern = new Intern(answers.name, id++, answers.email, answers.school);
+            teampg.push(intern);
+            originP();
+
+        });
+}
+originP();
